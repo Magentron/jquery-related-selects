@@ -29,9 +29,9 @@
 		}
 		
 		// make array of select names
-		$.each(opts.selects, function(){
-			selects.push(key);
-		});
+		for(key in opts.selects){
+			selects.push(key)
+		}
 		
 		// cache the options where the value is empty for each select before processing occurs.
 		saveDefaultOptionText(); 
