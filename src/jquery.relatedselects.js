@@ -84,7 +84,7 @@
 			var value = $.trim($select.val());
 		
 			// if this select box's length has been changed to a legit value, and there is another select box after this one
-			if(value.length > 0 && value !== o.loadingMessage && $next){
+			if(o.loadNextIfEmpty || (value.length > 0 && value !== o.loadingMessage) && $next){
 			
 				// reset all selects after this one
 				resetAfter(elem);
@@ -191,6 +191,7 @@
 		selects: {},
 		loadingMessage: 'Loading, please wait...',
 		disableIfEmpty: false,
+		loadNextIfEmpty: false,
 		dataType: 'json',
 		onChangeLoad: '',
 		onLoadingStart: function(){},
